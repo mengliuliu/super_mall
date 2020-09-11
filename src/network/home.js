@@ -5,6 +5,11 @@ export function getHomeMultiData() {
     url: "/home/multidata"
   });
 }
+export function getHomeMultiData2() {
+  return request2({
+    url: "/home/multidata"
+  });
+}
 
 export function getHomeGoods(type, page) {
   return request2({

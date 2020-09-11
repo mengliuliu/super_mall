@@ -1,6 +1,6 @@
 <template>
   <div class="goods-list-item" @click="ItemClick">
-    <img :src="goodsListItem.show.img" alt="" @load="imageLoad" />
+    <img :src="showImage" alt="" @load="imageLoad" />
     <div class="info">
       <p class="title">{{ goodsListItem.title }}</p>
       <p class="num">
@@ -22,13 +22,36 @@ export default {
       }
     }
   },
+  computed: {
+    showImage() {
+      return this.goodsListItem.image || this.goodsListItem.show.img;
+    }
+  },
   methods: {
     imageLoad() {
-      this.$bus.$emit("itemImageLoad");
+      // 针对不同的路径，触发不同的事件，在不同的组件中监听事件，在调用对应组件中的scroll中的refresh
+      if (this.$route.path.indexOf("/home") !== -1) {
+        this.$bus.$emit("homeItemImageLoad");
+      } else if (this.$route.path.indexOf("/detail") !== -1) {
+        this.$bus.$emit("detailItemImageLoad");
+      }
     },
     // 处理item的点击事件，进行路由跳转，并且传递参数
     ItemClick() {
-      this.$router.push("/detail" + this.goodsListItem.iid);
+      // 动态路由匹配
+      // this.$router.push("/detail" + this.goodsListItem.iid);
+      // 传递查询参数
+      // 对首页和详情页的商品id进行包装
+      const iid = this.goodsListItem.iid
+        ? this.goodsListItem.iid
+        : this.goodsListItem.item_id;
+      console.log(iid);
+      this.$router.push({
+        path: "detail",
+        query: {
+          iid
+        }
+      });
       // console.log(1);
     }
   }

@@ -59,7 +59,7 @@ export default {
     // 使页面回到指定位置
     scrollToPosition(x, y) {
       this.bs && this.bs.scrollTo(x, y);
-      console.log("backTop被点击了");
+      // console.log("backTop被点击了");
     },
     refresh() {
       this.bs && this.bs.refresh();

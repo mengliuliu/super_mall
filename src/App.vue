@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <keep-alive>
+    <keep-alive exclude="Detail">
       <router-view></router-view>
     </keep-alive>
     <tab-bar class="tab-bar"></tab-bar>
@@ -31,7 +31,7 @@ export default {
   padding-bottom: 65px;
 }
 .tab-bar {
-  z-index: 9;
+  // z-index: 9;
   background-color: #fff;
 }
 </style>

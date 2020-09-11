@@ -16,7 +16,7 @@ const routes = [
   { path: "/category", component: Category },
   { path: "/cart", component: Cart },
   { path: "/profile", component: Profile },
-  { path: "/detail:iid", component: Detail }
+  { path: "/detail", component: Detail }
 ];
 
 const router = new VueRouter({

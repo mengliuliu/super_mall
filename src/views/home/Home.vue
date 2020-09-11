@@ -66,7 +66,11 @@ import TabPage from "@/components/content/TabPage";
 import BackTop from "@/components/content/BackTop";
 import GoodsList from "@/components/content/home/GoodsList";
 
-import { getHomeMultiData, getHomeGoods } from "@/network/home";
+import {
+  getHomeMultiData,
+  getHomeMultiData2,
+  getHomeGoods
+} from "@/network/home";
 
 import { debounce } from "@/common/utils";
 
@@ -105,7 +109,7 @@ export default {
       },
 
       // 控制backTop图标的显示与隐藏
-      isShow: false,
+      isShow: false
       // tab标签页距离顶部的距离
       // tabPageToTop: 651,
       // 标签页是否显示
@@ -129,7 +133,7 @@ export default {
 
     // 1.图片加载完成的事件监听
     const refresh = debounce(this.$refs.scroll.refresh, 50);
-    this.$bus.$on("itemImageLoad", () => {
+    this.$bus.$on("homeItemImageLoad", () => {
       refresh();
     });
 
@@ -236,6 +240,7 @@ export default {
     left: 0;
     right: 0;
     z-index: 2;
+    // margin-top: 44px;
   }
   .van-swipe {
     .van-swipe-item {

@@ -18,8 +18,8 @@ export default {};
   line-height: 44px;
   display: flex;
 
-//   background-color: var(--color-tint);
-//   color: white;
+  //   background-color: var(--color-tint);
+  //   color: white;
   .left {
     width: 60px;
     // background-color: red;
