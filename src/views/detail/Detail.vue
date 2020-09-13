@@ -64,6 +64,8 @@ import Scroll from "@/components/common/scroll/Scroll";
 
 import { debounce } from "@/common/utils";
 
+import { mapActions } from "vuex";
+
 import {
   getDetail,
   getRecommend,
@@ -170,6 +172,7 @@ export default {
     BackTop
   },
   methods: {
+    ...mapActions(["addProduct"]),
     // imgLoad是子组件（swipe）触发的事件
     imgLoad() {
       // 监听轮播图中的图片触发的imgLoad事件
@@ -230,7 +233,19 @@ export default {
       console.log(product);
 
       // 2. 将商品添加到购物车中
-      this.$store.dispatch("addProduct", product);
+      // this.$store.dispatch("addProduct", product);
+      // 调用Actions中映射过来的方法
+      this.addProduct(product).then((res) => {
+        console.log(res);
+
+        // 3. 显示提示内容
+        this.$toast(res);
+        // Toast(res);
+      });
+      // console.log("addToCart");
+
+      // 3. 使用编程式导航，跳转到购物车页面
+      // this.$router.push("/cart");
     }
   }
 };

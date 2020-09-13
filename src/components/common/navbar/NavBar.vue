@@ -17,6 +17,7 @@ export default {};
   height: 44px;
   line-height: 44px;
   display: flex;
+  // background-color: var(--color-tint);
 
   //   background-color: var(--color-tint);
   //   color: white;

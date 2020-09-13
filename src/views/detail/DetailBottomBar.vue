@@ -34,6 +34,7 @@ export default {
 <style lang="less" scoped>
 .detail-bottom-bar {
   position: relative;
+  top: 2px;
   z-index: 10;
   background-color: red;
   height: 49px;

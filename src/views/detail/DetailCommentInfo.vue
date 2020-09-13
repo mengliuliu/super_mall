@@ -98,8 +98,8 @@ export default {
       justify-content: flex-start;
       flex-wrap: wrap;
       img {
-        width: 80px;
-        height: 80px;
+        width: 100px;
+        // height: 80px;
         margin: 1px 1px 0 0;
       }
     }

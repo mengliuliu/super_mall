@@ -4,11 +4,12 @@ import router from "./router";
 import store from "./store";
 
 // 引入vant组件库
-import { Swipe, SwipeItem, Lazyload } from "vant";
+import { Swipe, SwipeItem, Lazyload, Toast } from "vant";
 import "vant/lib/index.css";
 Vue.use(Swipe);
 Vue.use(SwipeItem);
 Vue.use(Lazyload);
+Vue.use(Toast);
 
 Vue.config.productionTip = false;
 
