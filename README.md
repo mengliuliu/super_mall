@@ -49,3 +49,34 @@
   - 用于不是 static 定位的定位元素，设置定位元素在 Z 轴（垂直与显示器的轴）的层叠顺序
 
 ## 购物车
+
+## 优化
+
+### 图片懒加载
+
+- 什么是图片懒加载？
+  - 图片需要展示在公屏上时，再加载这张图片
+- 使用 `vue-lazyload`
+  - 下载
+  - 导入
+  - 安装
+  - 使用（img :src->v-lazy）
+
+### 移动端 300 毫秒延迟问题
+
+- 原因
+  - 就是早期苹果为了判断移动端上的双击缩放事件而加的，在 touchend 和 click 事件之间加 300ms 的延迟来判断用户到底是点击还是双击
+- 解决
+  - fastclick
+  - fastclick 是专门为解决移动端浏览器 300 毫秒点击延迟问题所开发的一个轻量级的库。
+  - fastclick 的原理是在检测到 touchend 事件的时候，会通过 DOM 自定义事件立即触发模拟一个 click 事件，并把浏览器在 300ms 之后的 click 事件阻止调。
+
+### px2vw 插件使用
+
+- 安装插件
+
+- 在 `postcss.config.js` 中配置
+
+- 链接地址 [postcss-px-to-viewport](https://github.com/evrone/postcss-px-to-viewport/blob/master/README_CN.md/)
+
+### 防抖节流函数

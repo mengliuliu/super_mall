@@ -3,6 +3,13 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 
+import VueLazyload from "vue-lazyload";
+Vue.use(VueLazyload);
+// or with options 也可以直接在这里设置参数
+Vue.use(VueLazyload, {
+  loading: require("./assets/img/common/placeholder.png") //图片加载的路径
+});
+
 // 引入vant组件库
 import { Swipe, SwipeItem, Lazyload, Toast } from "vant";
 import "vant/lib/index.css";

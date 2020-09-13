@@ -54,6 +54,7 @@ export default {
     flex: 1;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     .item_icon {
       font-size: 30px;
     }

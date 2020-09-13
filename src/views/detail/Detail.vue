@@ -188,14 +188,14 @@ export default {
     },
     // 导航条自定义的标题点击事件
     titleClick(index) {
-      console.log(index);
-      console.log(this.themeTopY[index]);
+      // console.log(index);
+      // console.log(this.themeTopY[index]);
       this.$refs.scroll.scrollToPosition(0, -this.themeTopY[index] + 44);
     },
     // scroll中的内容滚动时触发该事件
     scrollPage(position) {
       // 1. 联动效果的实现
-      console.log(position);
+      // console.log(position);
       const positionY = -position.y;
       const length = this.themeTopY.length;
       for (let i = 0; i < length - 1; i++) {
